@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f1a;
+    color: #f0ece4;
+    padding: 24px 16px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d4a843;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a09070;
+    margin-bottom: 28px;
+    letter-spacing: 1px;
+  }
+  .days {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .day {
+    background: #1a1a2e;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #2a2a45;
+  }
+  .day-header {
+    padding: 14px 12px 10px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .do .day-header { background: #1e3a5f; color: #7eb8f7; }
+  .fr .day-header { background: #3a1e5f; color: #c87ef7; }
+  .sa .day-header { background: #5f1e2a; color: #f77eb8; }
+  .so .day-header { background: #1e5f3a; color: #7ef7b8; }
+  .day-date { font-size: 0.7rem; font-weight: 400; opacity: 0.7; margin-top: 2px; }
+  .events { padding: 12px 10px; display: flex; flex-direction: column; gap: 10px; }
+  .event {
+    border-radius: 10px;
+    padding: 10px 12px;
+    position: relative;
+    border-left: 3px solid transparent;
+  }
+  .event .time { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 3px; opacity: 0.75; }
+  .event .label { font-size: 0.88rem; font-weight: 600; line-height: 1.3; }
+  .event .detail { font-size: 0.72rem; opacity: 0.65; margin-top: 3px; line-height: 1.3; }
+  .event .emoji { font-size: 1.1rem; position: absolute; top: 10px; right: 10px; }
+  .ev-transfer { background: #1a2a3a; border-color: #4a8abf; }
+  .ev-transfer .time { color: #7eb8f7; }
+  .ev-dinner { background: #2a1a10; border-color: #bf6a20; }
+  .ev-dinner .time { color: #f7a060; }
+  .ev-party { background: #2a102a; border-color: #9b30bf; }
+  .ev-party .time { color: #d080f0; }
+  .ev-culture { background: #1a2a1a; border-color: #30a060; }
+  .ev-culture .time { color: #70e0a0; }
+  .ev-food { background: #2a2010; border-color: #c0901a; }
+  .ev-food .time { color: #f0c060; }
+  .ev-yacht { background: #0f1e2e; border-color: #1a7abf; }
+  .ev-yacht .time { color: #50c0f0; }
+  .ev-relax { background: #101a1a; border-color: #209090; }
+  .ev-relax .time { color: #60d0c0; }
+  .ev-club { background: #1a0f1f; border-color: #8020bf; }
+  .ev-club .time { color: #c060f0; }
+  .ev-highlight { box-shadow: 0 0 0 1px rgba(212,168,67,0.4); }
+  .highlight-badge {
+    font-size: 0.6rem;
+    background: #d4a843;
+    color: #0f0f1a;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 4px;
+  }
+  .legend {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #a09070; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<h1>🇹🇷 Polterabend Istanbul – Mäx</h1>
+<div class="subtitle">16 Personen · Wien → Istanbul · Do–So</div>
+<div class="subtitle" style="margin-top:-18px;">🏨 Hotel: Gümrük Sokak, Beyoğlu · Istanbul 34425</div>
+<div class="days">
+
+  <div class="day do">
+    <div class="day-header">Donnerstag<div class="day-date">23. Juli · Anreisetag</div></div>
+    <div class="events">
+      <div class="event ev-transfer" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/qTxTCcD8oDhZCkwY6','_blank')">
+        <span class="emoji">🤝</span>
+        <div class="time">MORGEN · 08:00 UHR</div>
+        <div class="label">Treffpunkt Flughafen Wien</div>
+        <div class="detail">Abflug 10:35 → Istanbul Sabiha Gökçen</div>
+        <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
+      </div>
+      <div class="event ev-transfer" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/4oR1uSYmPSkfeDQ78','_blank')">
+        <span class="emoji">✈️</span>
+        <div class="time">NACHMITTAG · 13:50 UHR</div>
+        <div class="label">Ankunft Istanbul</div>
+        <div class="detail">Istanbul Sabiha Gökçen<br>→ Unterkunft Beyoğlu</div>
+        <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
+      </div>
+      <div class="event ev-transfer" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/xZgvQbqzGBkzkuZt9','_blank')">
+        <span class="emoji">🏨</span>
+        <div class="time">NACHMITTAG · 16:00 UHR</div>
+        <div class="label">Check-In Hotel</div>
+        <div class="detail">Gümrük Sokak, Beyoğlu 34425</div>
+        <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
+      </div>
+      <div class="event ev-dinner" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/sn5STWu8X8DCbbk56','_blank')">
+        <span class="emoji">🥃</span>
+        <div class="time">ABEND · 19–22 UHR</div>
+        <div class="label">Rakı Dinner – Kadim Meyhane</div>
+        <div class="detail">Şehbender Sk. No:14, Asmalımescit<br>Meze · Fisch · Rakı</div>
+        <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
+      </div>
+      <div class="event ev-party" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/tX67jDwY3zxCBKAj9','_blank')">
+        <span class="emoji">🍸</span>
+        <div class="time">NACHT · AB 23 UHR</div>
+        <div class="label">Barhopping Taksim</div>
+        <div class="detail">Taksim Square & Istiklal Ave<br>Polterer-Challenges</div>
+        <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="day fr">
+    <div class="day-header">Freitag<div class="day-date">24. Juli · Kultur & Party</div></div>
+    <div class="events">
+      <div class="event ev-food">
+        <span class="emoji">☕</span>
+        <div class="time">MORGEN · 9–11 UHR</div>
+        <div class="label">Ausgiebiges Frühstück</div>
+        <div class="detail">Türkisches Frühstück<br>Çay & Simit</div>
+      </div>
+      <div class="event ev-culture">
+        <span class="emoji">🕌</span>
+        <div class="time">VORMITTAG · 11–14 UHR</div>
+        <div class="label">Sightseeing</div>
+        <div class="detail">Hagia Sophia · Blaue Moschee<br>Sultanahmet</div>
+      </div>
+      <div class="event ev-food">
+        <span class="emoji">🥙</span>
+        <div class="time">NACHMITTAG · 14–16 UHR</div>
+        <div class="label">Streetfood Tour</div>
+        <div class="detail">Döner · Balık Ekmek · Simit<br>Kokoreç für Mutige 😅</div>
+      </div>
+      <div class="event ev-culture">
+        <span class="emoji">🛍️</span>
+        <div class="time">NACHMITTAG · 16–18 UHR</div>
+        <div class="label">Grand Bazaar</div>
+        <div class="detail">Feilsch-Challenges<br>Fake-Rolex-Challenge</div>
+      </div>
+      <div class="event ev-yacht">
+        <span class="emoji">⛵</span>
+        <div class="time">ABEND · 18:30–22:30 UHR</div>
+        <div class="label">Yacht Party – SU Orion</div>
+        <div class="detail">Bosporus · Sonnenuntergang<br>4h · Galataport · Meal Menu + Alkohol</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day sa">
+    <div class="day-header">Samstag<div class="day-date">25. Juli · Kultur & Party</div></div>
+    <div class="events">
+      <div class="event ev-relax">
+        <span class="emoji">♨️</span>
+        <div class="time">VORMITTAG · 10–12 UHR</div>
+        <div class="label">Hamam</div>
+        <div class="detail">Recovery nach Freitag Nacht<br>1–2 Stunden Entspannung</div>
+      </div>
+      <div class="event ev-relax">
+        <span class="emoji">🌿</span>
+        <div class="time">NACHMITTAG · 14–17 UHR</div>
+        <div class="label">Shisha & Barber</div>
+        <div class="detail">Entspannter Start in den Abend<br>Barber-Shop Makeover für Mäx</div>
+      </div>
+      <div class="event ev-dinner">
+        <span class="emoji">🔥</span>
+        <div class="time">ABEND · 19–22 UHR</div>
+        <div class="label">Maksat Ocakbaşı & Meyhane</div>
+        <div class="detail">Sahne Sk. No:23, Nevizade<br>Kebab · Lamm · Rakı am offenen Grill</div>
+      </div>
+      <div class="event ev-club">
+        <span class="emoji">🎶</span>
+        <div class="time">NACHT · AB 23:30 UHR</div>
+        <div class="label">Club Sortie</div>
+        <div class="detail">VIP Tisch · Dresscode beachten<br>Einer der besten Clubs Istanbuls</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day so">
+    <div class="day-header">Sonntag<div class="day-date">26. Juli · Abreise</div></div>
+    <div class="events">
+      <div class="event ev-food">
+        <span class="emoji">☕</span>
+        <div class="time">MORGEN · 10–12 UHR</div>
+        <div class="label">Letztes Frühstück</div>
+        <div class="detail">Çay & türkische Pastries</div>
+      </div>
+      <div class="event ev-transfer">
+        <span class="emoji">🚗</span>
+        <div class="time">MITTAG · 12:00 UHR</div>
+        <div class="label">Transfer zum Flughafen</div>
+        <div class="detail">→ Istanbul Sabiha Gökçen</div>
+      </div>
+      <div class="event ev-transfer">
+        <span class="emoji">✈️</span>
+        <div class="time">NACHMITTAG · 15:35 UHR</div>
+        <div class="label">Abflug nach Wien</div>
+        <div class="detail">Istanbul Sabiha Gökçen → Vienna<br>Ankunft 17:05 Uhr</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#4a8abf"></div>Transfer</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#bf6a20"></div>Essen & Dinner</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#9b30bf"></div>Bars & Nightlife</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#30a060"></div>Kultur</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#1a7abf"></div>Yacht</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#8020bf"></div>Club</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#209090"></div>Relax / Hamam</div>
+</div>
+</body>
+</html>
