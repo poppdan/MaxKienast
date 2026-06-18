@@ -100,83 +100,115 @@
   }
   .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #a09070; }
   .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  @media (max-width: 760px) {
+    body { padding: 16px 10px; }
+    h1 { font-size: 1.15rem; letter-spacing: 1px; }
+    .subtitle { font-size: 0.75rem; }
+    .days {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .day-header { padding: 12px 10px 8px; font-size: 0.9rem; }
+    .event .label { font-size: 0.95rem; }
+    .event .detail { font-size: 0.78rem; }
+    .legend { gap: 10px 14px; }
+    .legend-item { font-size: 0.7rem; }
+  }
+</style>
+<style id="emergency-mobile-fix">
+  @media (max-width: 760px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
 </style>
 </head>
 <body>
 <h1>🇹🇷 Polterabend Istanbul – Mäx</h1>
-<div class="subtitle" style="margin-top:12px;cursor:pointer;" onclick="window.open('https://maps.app.goo.gl/xZgvQbqzGBkzkuZt9','_blank')">🏨 Hotel: Gümrük Sokak, Beyoğlu · Istanbul 34425 📍</div>
+<a href="https://maps.app.goo.gl/xZgvQbqzGBkzkuZt9" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+<div class="subtitle" style="margin-top:12px;cursor:pointer;">🏨 Hotel: Gümrük Sokak, Beyoğlu · Istanbul 34425 📍</div>
+</a>
 <div class="days">
 
   <div class="day do">
-    <div class="day-header">Donnerstag<div class="day-date">23. Juli · Anreisetag</div></div>
-    <div class="events">
-      <div class="event ev-transfer" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/qTxTCcD8oDhZCkwY6','_blank')">
+    <div class="day-header" style="cursor:pointer;user-select:none;" onclick="var e=document.getElementById('events-1');var a=document.getElementById('arrow-1');if(e.style.display==='none'){e.style.display='flex';a.textContent='▾';}else{e.style.display='none';a.textContent='▸';}">Donnerstag<div class="day-date">23. Juli · Anreisetag</div><span id="arrow-1" style="float:right;font-size:0.8rem;opacity:0.6;">▾</span></div>
+    <div class="events" id="events-1">
+      <a href="https://maps.app.goo.gl/qTxTCcD8oDhZCkwY6" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-transfer" style="position:relative;">
         <span class="emoji">🤝</span>
         <div class="time">MORGEN · 08:00 UHR</div>
         <div class="label">Treffpunkt Flughafen Wien</div>
         <div class="detail">Abflug 10:35 → Istanbul Sabiha Gökçen</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
-      <div class="event ev-transfer" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/4oR1uSYmPSkfeDQ78','_blank')">
+      </a>
+      <a href="https://maps.app.goo.gl/4oR1uSYmPSkfeDQ78" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-transfer" style="position:relative;">
         <span class="emoji">✈️</span>
         <div class="time">NACHMITTAG · 13:50 UHR</div>
         <div class="label">Ankunft Istanbul</div>
         <div class="detail">Istanbul Sabiha Gökçen<br>→ Unterkunft Beyoğlu</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
-      <div class="event ev-transfer" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/xZgvQbqzGBkzkuZt9','_blank')">
+      </a>
+      <a href="https://maps.app.goo.gl/xZgvQbqzGBkzkuZt9" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-transfer" style="position:relative;">
         <span class="emoji">🏨</span>
         <div class="time">NACHMITTAG · 16:00 UHR</div>
         <div class="label">Check-In Hotel</div>
         <div class="detail">Gümrük Sokak, Beyoğlu 34425</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
-      <div class="event ev-dinner" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/sn5STWu8X8DCbbk56','_blank')">
+      </a>
+      <a href="https://maps.app.goo.gl/sn5STWu8X8DCbbk56" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-dinner" style="position:relative;">
         <span class="emoji">🥃</span>
         <div class="time">ABEND · 19–22 UHR</div>
         <div class="label">Rakı Dinner – Kadim Meyhane</div>
         <div class="detail">Şehbender Sk. No:14, Asmalımescit<br>Meze · Fisch · Rakı</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
-      <div class="event ev-party" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/tX67jDwY3zxCBKAj9','_blank')">
+      </a>
+      <a href="https://maps.app.goo.gl/tX67jDwY3zxCBKAj9" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-party" style="position:relative;">
         <span class="emoji">🍸</span>
         <div class="time">NACHT · AB 23 UHR</div>
         <div class="label">Barhopping Taksim</div>
         <div class="detail">Taksim Square & Istiklal Ave<br>Polterer-Challenges</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
+      </a>
     </div>
   </div>
 
   <div class="day fr">
-    <div class="day-header">Freitag<div class="day-date">24. Juli · Kultur & Party</div></div>
-    <div class="events">
+    <div class="day-header" style="cursor:pointer;user-select:none;" onclick="var e=document.getElementById('events-2');var a=document.getElementById('arrow-2');if(e.style.display==='none'){e.style.display='flex';a.textContent='▾';}else{e.style.display='none';a.textContent='▸';}">Freitag<div class="day-date">24. Juli · Kultur & Party</div><span id="arrow-2" style="float:right;font-size:0.8rem;opacity:0.6;">▾</span></div>
+    <div class="events" id="events-2">
       <div class="event ev-food">
         <span class="emoji">☕</span>
         <div class="time">MORGEN · 9–11 UHR</div>
         <div class="label">Ausgiebiges Frühstück</div>
         <div class="detail">Türkisches Frühstück<br>Çay & Simit</div>
       </div>
-      <div class="event ev-culture" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/9UzcpUshn4umrfjF9','_blank')">
+      <a href="https://maps.app.goo.gl/9UzcpUshn4umrfjF9" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-culture" style="position:relative;">
         <span class="emoji">🕌</span>
         <div class="time">VORMITTAG · 11–14 UHR</div>
         <div class="label">Sightseeing</div>
         <div class="detail">Hagia Sophia · Blaue Moschee<br>Sultanahmet</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
-      <div class="event ev-food">
-        <span class="emoji">🥙</span>
-        <div class="time">NACHMITTAG · 14–16 UHR</div>
-        <div class="label">Streetfood Tour</div>
-        <div class="detail">Döner · Balık Ekmek · Simit<br>Kokoreç für Mutige 😅</div>
-      </div>
-      <div class="event ev-culture" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/JFumEKQqMnyVF6wN6','_blank')">
+      </a>
+      <a href="https://maps.app.goo.gl/JFumEKQqMnyVF6wN6" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-culture" style="position:relative;">
         <span class="emoji">🛍️</span>
-        <div class="time">NACHMITTAG · 16–18 UHR</div>
-        <div class="label">Grand Bazaar</div>
-        <div class="detail">Feilsch-Challenges<br>Fake-Rolex-Challenge</div>
+        <div class="time">NACHMITTAG · 14–18 UHR</div>
+        <div class="label">Streetfood & Grand Bazaar</div>
+        <div class="detail">Streetfood · Max feilschen lassen</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
+      </a>
       <div class="event ev-yacht">
         <span class="emoji">⛵</span>
         <div class="time">ABEND · 18:30–22:30 UHR</div>
@@ -187,8 +219,8 @@
   </div>
 
   <div class="day sa">
-    <div class="day-header">Samstag<div class="day-date">25. Juli · Kultur & Party</div></div>
-    <div class="events">
+    <div class="day-header" style="cursor:pointer;user-select:none;" onclick="var e=document.getElementById('events-3');var a=document.getElementById('arrow-3');if(e.style.display==='none'){e.style.display='flex';a.textContent='▾';}else{e.style.display='none';a.textContent='▸';}">Samstag<div class="day-date">25. Juli · Kultur & Party</div><span id="arrow-3" style="float:right;font-size:0.8rem;opacity:0.6;">▾</span></div>
+    <div class="events" id="events-3">
       <div class="event ev-relax">
         <span class="emoji">♨️</span>
         <div class="time">VORMITTAG · 10–12 UHR</div>
@@ -207,26 +239,30 @@
         <div class="label">Shisha & Barber</div>
         <div class="detail">Entspannter Start in den Abend<br>Barber-Shop Makeover für Mäx</div>
       </div>
-      <div class="event ev-dinner" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/gwuEA1nqEZmW8idb8','_blank')">
+      <a href="https://maps.app.goo.gl/gwuEA1nqEZmW8idb8" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-dinner" style="position:relative;">
         <span class="emoji">🔥</span>
         <div class="time">ABEND · 19–22 UHR</div>
         <div class="label">Maksat Ocakbaşı & Meyhane</div>
         <div class="detail">Kebab · Lamm · offener Grill</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
-      <div class="event ev-club" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/meXCqTGRj2b6nsTj6','_blank')">
+      </a>
+      <a href="https://maps.app.goo.gl/meXCqTGRj2b6nsTj6" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-club" style="position:relative;">
         <span class="emoji">🎶</span>
         <div class="time">NACHT · AB 23:30 UHR</div>
         <div class="label">Club Sortie</div>
         <div class="detail">VIP Tisch · Dresscode beachten<br>Einer der besten Clubs Istanbuls</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
+      </a>
     </div>
   </div>
 
   <div class="day so">
-    <div class="day-header">Sonntag<div class="day-date">26. Juli · Abreise</div></div>
-    <div class="events">
+    <div class="day-header" style="cursor:pointer;user-select:none;" onclick="var e=document.getElementById('events-4');var a=document.getElementById('arrow-4');if(e.style.display==='none'){e.style.display='flex';a.textContent='▾';}else{e.style.display='none';a.textContent='▸';}">Sonntag<div class="day-date">26. Juli · Abreise</div><span id="arrow-4" style="float:right;font-size:0.8rem;opacity:0.6;">▾</span></div>
+    <div class="events" id="events-4">
       <div class="event ev-food">
         <span class="emoji">☕</span>
         <div class="time">MORGEN · 10–12 UHR</div>
@@ -239,13 +275,15 @@
         <div class="label">Transfer zum Flughafen</div>
         <div class="detail">→ Istanbul Sabiha Gökçen</div>
       </div>
-      <div class="event ev-transfer" style="cursor:pointer;position:relative;" onclick="window.open('https://maps.app.goo.gl/4oR1uSYmPSkfeDQ78','_blank')">
+      <a href="https://maps.app.goo.gl/4oR1uSYmPSkfeDQ78" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+      <div class="event ev-transfer" style="position:relative;">
         <span class="emoji">✈️</span>
         <div class="time">NACHMITTAG · 15:35 UHR</div>
         <div class="label">Abflug nach Wien</div>
         <div class="detail">Istanbul Sabiha Gökçen → Vienna<br>Ankunft 17:05 Uhr</div>
         <span style="position:absolute;bottom:8px;right:8px;font-size:1rem;">📍</span>
       </div>
+      </a>
     </div>
   </div>
 
@@ -266,21 +304,23 @@
   <div style="text-align:center;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:#d4a843;margin-bottom:14px;">⚠️ Notfallnummern</div>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
 
-    <div style="background:#1a1a2e;border:1px solid #5f1e1e;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;" onclick="">
+    <div style="background:#1a1a2e;border:1px solid #5f1e1e;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;">
       <div style="font-size:1.6rem;margin-bottom:6px;">🚨</div>
       <div style="font-size:1.1rem;font-weight:700;color:#f77eb8;letter-spacing:1px;">112</div>
       <div style="font-size:0.78rem;color:#f0ece4;margin-top:4px;font-weight:600;">Notruf Türkei</div>
       <div style="font-size:0.68rem;color:#a09070;margin-top:3px;">Polizei · Ambulanz · Feuerwehr<br>Englisch verfügbar · kostenlos</div>
     </div>
 
-    <div style="background:#1a1a2e;border:1px solid #1e3a5f;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;" onclick="window.open('https://maps.app.goo.gl/NjzQ4m4odfYK6DQL6','_blank')">
+    <a href="https://maps.app.goo.gl/NjzQ4m4odfYK6DQL6" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+    <div style="background:#1a1a2e;border:1px solid #1e3a5f;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;">
       <div style="font-size:1.6rem;margin-bottom:6px;">🇦🇹</div>
       <div style="font-size:0.9rem;font-weight:700;color:#7eb8f7;letter-spacing:0.5px;">+90 532 262 00 19</div>
       <div style="font-size:0.78rem;color:#f0ece4;margin-top:4px;font-weight:600;">Österr. Generalkonsulat Istanbul</div>
       <div style="font-size:0.68rem;color:#a09070;margin-top:3px;">Notfall außerhalb Öffnungszeiten<br>Köybasi Caddesi 46, Yeniköy</div>
     </div>
+    </a>
 
-    <div style="background:#1a1a2e;border:1px solid #1e5f3a;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;" onclick="">
+    <div style="background:#1a1a2e;border:1px solid #1e5f3a;border-radius:12px;padding:14px 16px;cursor:pointer;text-align:center;">
       <div style="font-size:1.6rem;margin-bottom:6px;">🎰</div>
       <div style="font-size:1rem;font-weight:700;color:#7ef7b8;letter-spacing:0.5px;">0800 202 304</div>
       <div style="font-size:0.78rem;color:#f0ece4;margin-top:4px;font-weight:600;">Spielerschutz-Hotline Österreich</div>
